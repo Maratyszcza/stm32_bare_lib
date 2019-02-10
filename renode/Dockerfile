@@ -7,7 +7,8 @@ LABEL maintainer="Pete Warden <petewarden@google.com>"
 WORKDIR /
 
 # Install building tools
-RUN apt install -y gcc-arm-none-eabi unzip
+RUN apt update
+RUN apt install -y gcc-arm-none-eabi unzip curl
 RUN curl -L https://github.com/ARM-software/CMSIS_5/archive/5.4.0.zip -o /CMSIS_5.zip
 RUN unzip /CMSIS_5.zip
 RUN ln -s /CMSIS_5-5.4.0 /CMSIS_5
